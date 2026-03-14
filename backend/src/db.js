@@ -21,9 +21,13 @@ const createTable = async () => {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `);
-    console.log('Table "tasks" is ready');
+    console.log('✅ Таблица "tasks" готова');
+    
+    // Проверим, есть ли данные
+    const result = await pool.query('SELECT COUNT(*) FROM tasks');
+    console.log(`📊 Задачи в базе данных: ${result.rows[0].count}`);
   } catch (error) {
-    console.error('Error creating table:', error);
+    console.error('❌ Ошибка создания задачи:', error);
   }
 };
 
