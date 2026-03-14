@@ -1,68 +1,63 @@
-# Task Manager
+# Task Manager 📋
 
-Простой сервис для учета задач сотрудников.
+Простой сервис для учета задач сотрудников с нежно-голубым дизайном и эффектом стекла.
 
-## Технологии
+## ✨ Возможности
+
+- ✅ Просмотр списка задач
+- ➕ Добавление новых задач
+- ✔️ Отметка задач выполненными
+- 🗑️ Удаление задач
+- 📅 Автоматическое отображение даты создания
+- 🎨 Современный glassmorphism дизайн
+
+## 🛠️ Технологии
 
 - **Backend**: Node.js, Express, PostgreSQL
 - **Frontend**: React, Axios
+- **Docker**: Контейнеризация приложения
 
-## Установка и запуск
+## 🚀 Способы запуска
 
-### Предварительные требования
+### Способ 1: Запуск с помощью Docker (рекомендуется)
 
-- Node.js (LTS версия)
-- PostgreSQL
-- Git
+#### Предварительные требования
+-Docker Desktop
+-Git
 
-### Пошаговая инструкция
+#### Шаги для запуска
 
-#### 1. Клонирование репозитория
+1. **Клонируйте репозиторий**
+   git clone https://github.com/Asyan31/task-manager.git
+   cd task-manager
+   
+2. **Запустите контейнеры**
+  docker-compose up -d
 
-git clone https://github.com/Asyan31/task-manager.git
+3. **Проверьте, что контейнеры запущены**
+  docker ps
 
-cd task-manager
+**Вы должны увидеть два контейнера:**
 
-#### 2. Настройка базы данных
+task-manager-backend (порт 5000)
+task-manager-db (порт 5432)
 
-#### Вариант А: Через pgAdmin (рекомендуется)
+#### Просмотр логов
 
-Откройте pgAdmin
+# Логи backend
+docker logs task-manager-backend
 
-Создайте новую базу данных с именем task_manager
+# Логи базы данных
+docker logs task-manager-db
 
-Запомните пароль пользователя postgres
+# Все логи вместе
+docker-compose logs
 
-#### Вариант Б: Через командную строку
-
-psql -U postgres
-CREATE DATABASE task_manager;
-\q
-
-#### 3. Настройка backend
-
-cd backend
-npm install
-
-#### Создайте файл .env в папке backend:
-
-DB_USER=postgres
-DB_PASSWORD=ваш_пароль
-DB_HOST=localhost
-DB_PORT=5432
-DB_DATABASE=task_manager
-PORT=5000
-
-#### Запустите сервер:
-
-npm run dev
-Сервер запустится на http://localhost:5000
-
-#### 4. Настройка frontend
-Откройте новый терминал
+#### Запустите frontend (отдельно, без Docker)
 
 cd frontend
 npm install
 npm start
 
-#### Приложение откроется на http://localhost:3000
+##### Откройте приложение
+http://localhost:3000
