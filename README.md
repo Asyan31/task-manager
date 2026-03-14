@@ -19,7 +19,7 @@
 
 #### 1. Клонирование репозитория
 
-git clone https://github.com/your-username/task-manager.git
+git clone https://github.com/Asyan31/task-manager.git
 
 cd task-manager
 
